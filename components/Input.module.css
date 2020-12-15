@@ -1,0 +1,17 @@
+#inputId {
+    text-align: center;
+    background: #222;
+    color: #eee
+}
+
+.error {
+    color: #bbb;
+    border: 2px solid #d00;
+    background-color: #500;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.normal {
+    color: #fff;
+}

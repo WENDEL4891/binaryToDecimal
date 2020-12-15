@@ -1,0 +1,21 @@
+.containerLayout {
+    border: 2px solid #0f0;
+    margin: auto 10%;
+    background-color: #333;
+    color: #ddd;
+}
+
+#tituloLayout {
+    text-align: center;
+}
+
+#rodapeLayout {
+    text-align: center;
+}
+
+#containerChildren {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
