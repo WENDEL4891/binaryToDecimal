@@ -16,8 +16,8 @@ export default function Input(props) {
         
         
         lockInvalidChar(event)
-
-        limit8chars(event)
+        completed8chars()        
+        lockMoreThan8chars(event)
                        
         function lockInvalidChar() {
             
@@ -28,47 +28,42 @@ export default function Input(props) {
             )
             
             if (! conditionForInput){
-                setMsgClass(styles.error)
                 setMsg('Digite apenas 1 ou 0')
-                event.target.value = value.slice(0, len  - 1)
-                console.log(msg)
+                setMsgClass(styles.error)
+                event.target.value = value.slice(0, len  - 1)                
             } else {
-                setMsgClass(styles.normal)
                 setMsg('')
+                setMsgClass(styles.normal)
             }
         }
         
-        function limit8chars(event) {            
+        function completed8chars() {
+            if (value.length === 8) {                
+                setFinalValueInput(event.target.value)                
+            }else {
+                setFinalValueInput("")
+            }
+        }        
+        
+        function lockMoreThan8chars(event) {            
             if (value.length === 9) {
                 event.target.value = value.slice(0, len  - 1)
-                setFinalValueInput(event.target.value)
-                // console.log(event.target.value)
                 setMsg("Apenas 8 dígitos")
                 setMsgClass(styles.error)
+                setFinalValueInput(event.target.value)
             }
-        }
-
-        
-        if ( event.target.value.length == 8 ) {
-            // props.setValueInput(value)
-            setFinalValueInput(value)
-        } else {
-            // props.setValueInput("")
-            setFinalValueInput("")
-        }
-        
+        }       
         
     }
-
+    
     const handleSubmit = event => {
-        
         event.preventDefault()
-        setMsg('')        
-        if ( finalValueInput ){
-            props.setValueInput(finalValueInput)
-        } else {
+        const inputValue = document.getElementsByName("inputName")[0].value        
+        if (inputValue.length != 8) {
+            setMsg("Digite um binário com 8 dígitos")
             setMsgClass(styles.error)
-            setMsg("Informe o binário, com 8 dígitos.")
+        } else {
+            props.setValueInput(inputValue)            
         }
     }
     
@@ -84,7 +79,7 @@ export default function Input(props) {
                     onChange={e=>handleChange(e)}                    
                     placeholder="Digite o binário aqui..."
                     id={styles.inputId}
-                    name="inputId"
+                    name="inputName"
                 />
                 <input type="submit" value="converter" />                
                 <div className={msgClass} >
@@ -93,11 +88,4 @@ export default function Input(props) {
             </form>
         </div>
     )
-}
-
-const check = e => {
-    const inputElement = document.getElementById("inputElement")
-    const value = inputElement.value
-    const last = value[value.length-1]
-    console.log(last)
 }

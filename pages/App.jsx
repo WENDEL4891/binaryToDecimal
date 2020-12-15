@@ -9,10 +9,11 @@ export default function App(props) {
     const [valueInput, setValueInput] = useState()
 
     
+   
     return (
         <Layout >
             <Input setValueInput={setValueInput} />
-            <Output valorPraConverter={valueInput}/>        
+            <Output valorPraConverter={valueInput}/>
         </Layout>
     )
 }

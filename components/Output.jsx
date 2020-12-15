@@ -5,13 +5,13 @@ export default function Output (props) {
 
     const [result, setResult] = useState("")
 
-    const binarioArray = (
-        props.valorPraConverter ?
-        props.valorPraConverter.split("") :
-        "nada"
-    )
+    // const binarioArray = (
+    //     props.valorPraConverter ?
+    //     props.valorPraConverter.split("") :
+    //     "nada"
+    // )
 
-    console.log(binarioArray)
+    // console.log(binarioArray)
 
     
 
