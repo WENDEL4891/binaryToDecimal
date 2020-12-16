@@ -14,6 +14,7 @@ export default function App(props) {
         <Layout >
             <Input setInputValue={setInputValue} />
             <Output inputValue={inputValue}/>
+            <div>Texto adicional</div>
         </Layout>
     )
 }
