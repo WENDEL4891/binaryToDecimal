@@ -3,24 +3,25 @@ import { useState } from 'react'
 
 export default function Output (props) {
 
-    const [result, setResult] = useState("")
-
-    // const binarioArray = (
-    //     props.valorPraConverter ?
-    //     props.valorPraConverter.split("") :
-    //     "nada"
-    // )
-
-    // console.log(binarioArray)
-
     
-
-
+    const getResult = result => {
+        if (props.inputValue){
+            let decimal = 0
+            let fatorDeMultiplicacao = 128
+            props.inputValue.split("").forEach((dgt, idx, bin) => {                               
+                decimal += Number(dgt) * fatorDeMultiplicacao
+                fatorDeMultiplicacao /= 2
+            })
+            return decimal.toString()
+        } else {
+            return ""
+        }
+    }    
 
     return (
         <div className="card">
-            <h3>Decimal correspondente</h3>
-            <output id={styles.decimalElement}>{result}</output>
+            <h3>Decimal correspondente</h3>            
+            <output id={styles.decimalElement}>{getResult()}</output>
         </div>
     )
 }

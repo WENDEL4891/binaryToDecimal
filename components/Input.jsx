@@ -16,7 +16,6 @@ export default function Input(props) {
         
         
         lockInvalidChar(event)
-        completed8chars()        
         lockMoreThan8chars(event)
                        
         function lockInvalidChar() {
@@ -37,20 +36,12 @@ export default function Input(props) {
             }
         }
         
-        function completed8chars() {
-            if (value.length === 8) {                
-                setFinalValueInput(event.target.value)                
-            }else {
-                setFinalValueInput("")
-            }
-        }        
-        
         function lockMoreThan8chars(event) {            
             if (value.length === 9) {
                 event.target.value = value.slice(0, len  - 1)
                 setMsg("Apenas 8 dígitos")
                 setMsgClass(styles.error)
-                setFinalValueInput(event.target.value)
+                // setFinalValueInput(event.target.value)
             }
         }       
         
@@ -62,8 +53,11 @@ export default function Input(props) {
         if (inputValue.length != 8) {
             setMsg("Digite um binário com 8 dígitos")
             setMsgClass(styles.error)
+            props.setInputValue("")
         } else {
-            props.setValueInput(inputValue)            
+            props.setInputValue(inputValue)
+            setMsg("")
+            setMsgClass(styles.normal)
         }
     }
     

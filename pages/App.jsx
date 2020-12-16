@@ -6,14 +6,14 @@ import Output from '../components/Output'
 
 export default function App(props) {
 
-    const [valueInput, setValueInput] = useState()
+    const [inputValue, setInputValue] = useState()
 
     
    
     return (
         <Layout >
-            <Input setValueInput={setValueInput} />
-            <Output valorPraConverter={valueInput}/>
+            <Input setInputValue={setInputValue} />
+            <Output inputValue={inputValue}/>
         </Layout>
     )
 }
