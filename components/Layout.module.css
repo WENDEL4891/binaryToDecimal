@@ -1,8 +1,8 @@
 .containerLayout {
-    border: 2px solid #0f0;
+    border: 2px solid #1e1f26;
     margin: auto 10%;
-    background-color: #333;
-    color: #ddd;
+    background-color: #4d648d;
+    color: #1e1f26;
 }
 
 #tituloLayout {

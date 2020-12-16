@@ -1,9 +1,9 @@
 html {
-    background-color: black;
+    background-color: #283655;
 }
 
 .card {
-    border: solid green 1px;
+    border: solid #1e1f26 1px;
     border-radius: 15px;
     min-width: 400px;
     max-width: 600px;
