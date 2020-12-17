@@ -1,1 +1,5 @@
-#decimalElement {}
+#decimalElement {
+    background-color: #e6e2d3;
+    padding: 5px;
+    border: 1px #444 solid;
+}

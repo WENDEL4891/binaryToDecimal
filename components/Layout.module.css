@@ -1,8 +1,29 @@
+@media all and (min-width: 572px) {
+    .containerLayout {
+        width: 80%;
+        font-size: 20px;
+    }
+}
+
+@media all and (min-max: 572px) {
+    .containerLayout {
+        width: 80%;
+        font-size: 20px;
+    }
+}
+
+@media all and (min-width: 572px) {
+    .containerLayout {
+        width: 80%
+    }
+}
+
 .containerLayout {
-    border: 2px solid #1e1f26;
+    border: 2px solid #e6e2d3;
     margin: auto 10%;
-    background-color: #4d648d;
+    background-color: #c1946a;
     color: #1e1f26;
+    width: 80%;
 }
 
 #tituloLayout {

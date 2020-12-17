@@ -1,13 +1,14 @@
 html {
-    background-color: #283655;
+    background-color: #c4b7a6;
 }
 
 .card {
-    border: solid #1e1f26 1px;
+    border: solid #e6e2d3 1px;
     border-radius: 15px;
-    min-width: 400px;
-    max-width: 600px;
+    /* min-width: 400px;
+    max-width: 600px; */
     margin: 10px;
     padding: 10px;
     text-align: center;
+    background-color: #dac292;
 }
