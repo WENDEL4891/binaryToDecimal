@@ -21,7 +21,9 @@ export default function Output (props) {
     return (
         <div className="card">
             <h3>Decimal correspondente</h3>            
-            <output id={styles.decimalElement}>{getResult()}</output>
+            <output id={
+                getResult() ? styles.decimalElement : ""
+            }>{getResult()}</output>
         </div>
     )
 }
