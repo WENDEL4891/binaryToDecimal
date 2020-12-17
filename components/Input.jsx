@@ -19,22 +19,23 @@ export default function Input(props) {
         lockMoreThan8chars(event)
                        
         function lockInvalidChar() {
-            
-            const conditionForInput = (
-                ( last == 0 )|
-                ( last == 1 )|
-                ( last == "" )
-            )
-            
-            if (! conditionForInput){
+                        
+            let someInvalidNumber = false
+            for (let i = 0; i < value.length; i ++) {                               
+                if ( ["0", "1"].indexOf(value[i] ) < 0){
+                    someInvalidNumber = true
+                    event.target.value = value.replace(value[i], "")
+                }
+            }
+            if (someInvalidNumber) {
                 setMsg('Digite apenas 1 ou 0')
-                setMsgClass(styles.error)
-                event.target.value = value.slice(0, len  - 1)                
+                setMsgClass(styles.error)                
             } else {
-                setMsg('')
+                setMsg("")
                 setMsgClass(styles.normal)
             }
-        }
+
+        }   
         
         function lockMoreThan8chars(event) {            
             if (value.length === 9) {
@@ -43,9 +44,9 @@ export default function Input(props) {
                 setMsgClass(styles.error)
                 // setFinalValueInput(event.target.value)
             }
-        }       
-        
+        }
     }
+        
     
     const handleSubmit = event => {
         event.preventDefault()
